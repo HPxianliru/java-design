@@ -1,6 +1,7 @@
 package com.xian.time.window.common;
 
 
+import com.xian.time.window.SamplData;
 import com.xian.time.window.thread.DefaultNamedThreadFactory;
 import com.xian.time.window.thread.RunnableWithExceptionProtection;
 
@@ -33,18 +34,19 @@ public class SamplingService{
         if (SAMPLE_N_PER_3_SECS > 0) {
             on = true;
             this.resetSamplingFactor();
+            SamplData data = new SamplData();
             ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor(new DefaultNamedThreadFactory("SamplingService"));
-            scheduledFuture = service.scheduleAtFixedRate(new RunnableWithExceptionProtection(new Runnable() {
+            scheduledFuture = service.scheduleAtFixedRate(new RunnableWithExceptionProtection<SamplData>( new Runnable() {
 
                 public void run() {
                     resetSamplingFactor();
                 }
-            }, new RunnableWithExceptionProtection.CallbackWhenException() {
+            }, new RunnableWithExceptionProtection.CallbackWhenException<SamplData>() {
 
-                public void handle(Throwable t) {
+                public void handle(Throwable t,SamplData samplData) {
                     System.out.println("unexpected exception."+ t.toString());
                 }
-            }), 0, 3, TimeUnit.SECONDS);
+            },data), 0, 3, TimeUnit.SECONDS);
             System.out.println("sampling mechanism started. Sample {} traces in 3 seconds."+ SAMPLE_N_PER_3_SECS);
         }
     }
