@@ -2,7 +2,6 @@ package com.xian.demo.support;
 
 import com.xian.demo.face.BaseThirdService;
 import com.xian.demo.manager.ShoutServiceManager;
-import org.apache.commons.lang3.StringUtils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -98,7 +97,7 @@ public class IServiceLoaderKV {
             if (eachLine == null) {
                 return result;
             }
-            while (StringUtils.isNotBlank(eachLine)) {
+            while (null != eachLine && "" != eachLine) {
                 int ci = eachLine.indexOf("#");
                 if (ci >= 0) {
                     eachLine = eachLine.substring(0,ci);

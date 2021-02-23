@@ -1,9 +1,7 @@
-package com.xian.time.window;
+package com.xian.sampl;
 
 
-import com.xian.time.window.common.SamplingService;
-
-import java.util.Timer;
+import com.xian.sampl.common.SamplingService;
 
 /**
  * @Description

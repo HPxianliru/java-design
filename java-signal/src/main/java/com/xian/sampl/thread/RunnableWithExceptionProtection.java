@@ -1,4 +1,4 @@
-package com.xian.time.window.thread;
+package com.xian.sampl.thread;
 
 /**
  * @Description

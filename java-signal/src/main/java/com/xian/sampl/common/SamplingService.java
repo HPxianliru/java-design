@@ -1,9 +1,9 @@
-package com.xian.time.window.common;
+package com.xian.sampl.common;
 
 
-import com.xian.time.window.SamplData;
-import com.xian.time.window.thread.DefaultNamedThreadFactory;
-import com.xian.time.window.thread.RunnableWithExceptionProtection;
+import com.xian.sampl.SamplData;
+import com.xian.sampl.thread.DefaultNamedThreadFactory;
+import com.xian.sampl.thread.RunnableWithExceptionProtection;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;

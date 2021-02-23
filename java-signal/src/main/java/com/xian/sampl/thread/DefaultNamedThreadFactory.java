@@ -1,4 +1,4 @@
-package com.xian.time.window.thread;
+package com.xian.sampl.thread;
 
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;

@@ -9,12 +9,21 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.0.RELEASE</version>
+    </parent>
+
+
     <modules>
         <module>java-proxy</module>
         <module>java-async-batch</module>
         <module>java-signal</module>
         <module>java-spi</module>
         <module>java-dynamic-thred-pool</module>
+        <module>java-time-window</module>
+        <module>redis-bitmap</module>
     </modules>
 
     <properties>

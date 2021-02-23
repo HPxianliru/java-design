@@ -1,6 +1,5 @@
 package com.xian.demo.support;
 
-import org.apache.commons.lang3.StringUtils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -90,7 +89,7 @@ public class IServiceLoader {
             if (eachLine == null) {
                 return result;
             }
-            while (StringUtils.isNotBlank(eachLine)) {
+            while (eachLine != null && eachLine != "") {
                 int ci = eachLine.indexOf("#");
                 if (ci >= 0) {
                     eachLine = eachLine.substring(0,ci);
